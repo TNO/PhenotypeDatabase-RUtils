@@ -1,4 +1,4 @@
 GSCF-RUtils
 ===========
 
-R with utility functions for GSCF
+R-scripts with utility functions for GSCF
