@@ -13,6 +13,7 @@
 #   limitations under the License.
 
 #require(GSCFClient)
+require(stringr)
 
 namedListToDataFrame <- function
 ### Transform a named list to table.
