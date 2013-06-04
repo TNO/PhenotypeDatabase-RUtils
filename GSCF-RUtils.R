@@ -42,7 +42,6 @@ getMultiAssayData <-function
 ### Get data from multiple assays from multiple studies and combine them in one data.frame
 (studyCodes, ##<< Give a list with study codes, one for each assa.
  assayNames, ##<< Give a list of assays, same order as studyCodes
- featureList, ##<< List of features
  subjectMetadata ##<< List of subject metadata
 )
 {
@@ -68,6 +67,7 @@ getMultiAssayData <-function
     studyEvents = getSamplingEventsForStudy(study['token'])
     relativeTimes = unlist(lapply(assayData$samplingEvent, function(x) studyEvents[[x]]$relativeTimeInRelatedEvent))
     eventDay = unlist(lapply(assayData$samplingEvent, function(x) studyEvents[[x]]$startTime))
+    assayData$relatedEvent = unlist(lapply(assayData$samplingEvent, function(x) studyEvents[[x]]$'relatedEvent/Chall.'))
     assayData$eventDay = floor(as.numeric(as.character(eventDay)) / 60 / 60 / 24)
     assayData$relativeTime = as.numeric(as.character(relativeTimes)) / 60
     
@@ -78,5 +78,5 @@ getMultiAssayData <-function
     multiAssayData = rbind(multiAssayData, assayData)
   }
   multiAssayData 
-  ### Returns a data.frame, content is based on the study, assay, feature and metadata selection.
+  ### Returns a data.frame, content is based on the study, assay and metadata selection.
 }
