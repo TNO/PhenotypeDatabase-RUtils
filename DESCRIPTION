@@ -6,5 +6,5 @@ Date: 2013-06-05
 Author: Robert Ernst
 Maintainer: Robert Ernst <robert.ernst@tno.nl>
 Description: R package with utility functions for manipulation, extraction and analysis of data available through GSCF.
-License: Apache v2.0
+License: Apache v2.0.1
 Depends: stringr
