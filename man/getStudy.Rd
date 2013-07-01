@@ -7,7 +7,7 @@
   \item{studyCode}{Give a study code}
 }
 
-
+\value{Returns the study information}
 
 \author{Robert Ernst}
 

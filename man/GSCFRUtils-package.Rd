@@ -8,11 +8,11 @@
 \tabular{ll}{Package: \tab GSCFRUtils\cr
 Type: \tab Package\cr
 Title: \tab R package with utility functions for GSCF.\cr
-Version: \tab 1.0\cr
+Version: \tab 2.0.2\cr
 Date: \tab 2013-06-05\cr
 Author: \tab Robert Ernst\cr
 Maintainer: \tab Robert Ernst <robert.ernst@tno.nl>\cr
-License: \tab Apache v2.0.1\cr
+License: \tab Apache v2.0\cr
 Depends: \tab stringr\cr}
 }
 \author{Robert Ernst}
