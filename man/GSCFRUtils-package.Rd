@@ -13,7 +13,7 @@ Date: \tab 2013-06-05\cr
 Author: \tab Robert Ernst\cr
 Maintainer: \tab Robert Ernst <robert.ernst@tno.nl>\cr
 License: \tab Apache v2.0\cr
-Depends: \tab stringr\cr}
+Depends: \tab stringr, gdata\cr}
 }
 \author{Robert Ernst}
 

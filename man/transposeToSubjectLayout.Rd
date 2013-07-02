@@ -2,9 +2,9 @@
 \alias{transposeToSubjectLayout}
 \title{transposeToSubjectLayout}
 \description{transpose transcriptomics files to subject layout.}
-\usage{transposeToSubjectLayout(filePath)}
+\usage{transposeToSubjectLayout(filename)}
 \arguments{
-  \item{filePath}{filepath of the excel file}
+  \item{filename}{full path to the excel file}
 }
 
 \value{Return transposed data.matrix}

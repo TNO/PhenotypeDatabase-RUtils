@@ -16,9 +16,9 @@ require(gdata)
 
 transposeToSubjectLayout <- function
 ### transpose transcriptomics files to subject layout.
-(filePath ##<< filepath of the excel file
+(filename ##<< full path to the excel file
 ){
-  data = read.xls(filePath, method="tab") #read excel file, sheet 1
+  data = read.xls(filename, method="tab") #read excel file, sheet 1
   dataTransposed = t(data) #tranpose data
   dataTransposed
   ### Return transposed data.matrix
