@@ -21,6 +21,12 @@ transposeToSubjectLayout <- function
 ){
   data = read.xls(paste0(dataPath,filename), method="tab") #read excel file, sheet 1
   dataTransposed = t(data) #tranpose data
+  
+  #Change row/col names for opencpu use.
+  dataTransposed = cbind(rownames(dataTransposed),dataTransposed)
+  colnames(dataTransposed) = dataTransposed[1,]
+  dataTransposed = dataTransposed[2:nrow(dataTransposed),]
+  
   dataTransposed
   ### Return transposed data.matrix
 }
