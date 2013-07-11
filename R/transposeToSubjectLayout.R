@@ -41,7 +41,7 @@ transposeToSubjectLayout <- function
   colnames(dataTransposed) = dataTransposed[1,]
   dataTransposed = dataTransposed[2:nrow(dataTransposed),]
   
-  write.table(dataTransposed, file='transposeddata.txt'), quote = FALSE)
+  write.table(dataTransposed, file='transposeddata.txt', quote = FALSE)
   
   dataTransposedpath=paste0(dataPath,'transposeddata.txt')
   
