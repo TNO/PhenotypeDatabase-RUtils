@@ -45,7 +45,7 @@ transposeToSubjectLayout <- function
   
   dataTransposedpath=paste0(dataPath,'transposeddata.txt')
   
-  replacespace= paste0("sed -i 's/[\t *]//g' ",dataTransposedpath)
+  replacespace= paste0("sed -i 's/[\t *]/\t/g' ",dataTransposedpath)
     
   system(replacespace)
   
