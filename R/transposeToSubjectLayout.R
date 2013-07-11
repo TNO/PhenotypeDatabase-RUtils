@@ -33,7 +33,7 @@ transposeToSubjectLayout <- function
 (filename, ##<< excel filename
  dataPath ##<< path to excel filename
 ){
-  data = read.xls(paste0(dataPath,filename), method="tab", check.names=FALSE) #read excel file, sheet 1
+  data = read.xls(paste0(dataPath,filename), method='tab', check.names=FALSE) #read excel file, sheet 1
   dataTransposed = t(data) #tranpose data
   
   #Change row/col names for opencpu use.
@@ -41,9 +41,11 @@ transposeToSubjectLayout <- function
   colnames(dataTransposed) = dataTransposed[1,]
   dataTransposed = dataTransposed[2:nrow(dataTransposed),]
   
-  write.table(dataTransposed, file=paste0(dataPath,'transposeddata.txt'), quote = FALSE)
+  write.table(dataTransposed, file=paste0(dataPath,'transposeddata.txt'), quote = FALSE, sep'\t')
   
   dataTransposedpath=paste0(dataPath,'transposeddata.txt')
+  
+  system(sed -i 's/ //g' dataTransposedpath)
   
   dataTransposedpath
   
