@@ -41,15 +41,13 @@ transposeToSubjectLayout <- function
   colnames(dataTransposed) = dataTransposed[1,]
   dataTransposed = dataTransposed[2:nrow(dataTransposed),]
   
-  write.table(dataTransposed, file=paste0(dataPath,'transposeddata.txt'), quote = FALSE, sep='\t', row.names = FALSE)
+  write.table(dataTransposed, file='transposeddata.txt', quote = FALSE, sep='\t', row.names = FALSE)
   
-  dataTransposedpath=paste0(dataPath,'transposeddata.txt')
+  dataTransposedpath=paste0(getwd(),'transposeddata.txt')
   
   replacespace= paste0("sed -i 's/\t */\t/g' ",dataTransposedpath)
     
   system(replacespace)
-  
-  dataTransposedpath
   
   ### Return transposed data.matrix
 }
