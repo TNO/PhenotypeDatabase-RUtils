@@ -34,9 +34,6 @@ transposeToSubjectLayout <- function
  dataPath ##<< path to excel filename
 ){
   
-  library(RAppArmor)
-  rlimit_cpu(120)
-  
   data = read.xls(paste0(dataPath,filename), method='tab', check.names=FALSE) #read excel file, sheet 1
   dataTransposed = t(data) #tranpose data
   
