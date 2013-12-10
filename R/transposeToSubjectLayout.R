@@ -37,11 +37,13 @@ transposeToSubjectLayout <- function
   
   #read tab delimited file
   data = read.table(paste0(dataPath,filename),header=F,sep ="\t",quote="\"'",dec=".",check.names=FALSE, stringsAsFactors=F)
-
+  
+  filename = gsub(x=filename,".txt","_transposeddata.txt")
+  
   dataTransposed = t(data) #transpose data
-
+  
   #Save transposed tab delimited output
-  write.table(dataTransposed, file='transposeddata.txt', quote = FALSE, sep='\t', row.names = FALSE, col.names= FALSE)
+  write.table(dataTransposed, file=filename, quote = FALSE, sep='\t', row.names = FALSE, col.names= FALSE)
   
   ### Return transposed data.matrix
 }
