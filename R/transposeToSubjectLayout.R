@@ -1,7 +1,7 @@
-# Robert Ernst
+# Robert Ernst/Jordy Coolen
 # Transpose transcriptomics files to subject layout
 
-# Copyright 2013 Robert Ernst
+# Copyright 2013 Robert Ernst/Jordy Coolen
 # 
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -35,25 +35,13 @@ transposeToSubjectLayout <- function
 ){
   options(digits=22)
   
-  #data = read.delim(paste0(dataPath,filename), header = FALSE)
-  
+  #read tab delimited file
   data = read.table(paste0(dataPath,filename),header=F,sep ="\t",quote="\"'",dec=".",check.names=FALSE, stringsAsFactors=F)
 
-  #data = read.xls(paste0(dataPath,filename), method='tab', check.names=FALSE) #read excel file, sheet 1
-  dataTransposed = t(data) #tranpose data
-  
-#   #Change row/col names for opencpu use.
-#   dataTransposed = cbind(rownames(dataTransposed),dataTransposed)
-#   colnames(dataTransposed) = dataTransposed[1,]
-#   dataTransposed = dataTransposed[2:nrow(dataTransposed),]
-  
-  write.table(dataTransposed, file='transposeddata.txt', quote = FALSE, sep='\t', row.names = FALSE)
-  
-#   dataTransposedpath=paste0(getwd(),'transposeddata.txt')
-#   
-#   replacespace= paste0("sed -i 's/\t */\t/g' ",dataTransposedpath)
-#   
-#   system(replacespace)
+  dataTransposed = t(data) #transpose data
+
+  #Save transposed tab delimited output
+  write.table(dataTransposed, file='transposeddata.txt', quote = FALSE, sep='\t', row.names = FALSE, col.names= FALSE)
   
   ### Return transposed data.matrix
 }
