@@ -33,6 +33,7 @@ transposeToSubjectLayout <- function
 (filename, ##<< excel filename
  dataPath ##<< path to excel filename
 ){
+  options(digits=22)
   
   data = read.xls(paste0(dataPath,filename), method='tab', check.names=FALSE) #read excel file, sheet 1
   dataTransposed = t(data) #tranpose data
