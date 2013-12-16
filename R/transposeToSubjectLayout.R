@@ -35,6 +35,12 @@ transposeToSubjectLayout <- function
 ){
   options(digits=22)
   
+  ## Defining the results folder
+  outputDir=paste0(dataPath,"results/")
+  
+  # Create output folder
+  system(paste0("mkdir ",outputDir))
+  
   #read tab delimited file
   data = read.table(paste0(dataPath,filename),header=F,sep ="\t",quote="\"'",dec=".",check.names=FALSE, stringsAsFactors=F)
   
@@ -43,7 +49,7 @@ transposeToSubjectLayout <- function
   dataTransposed = t(data) #transpose data
   
   #Save transposed tab delimited output
-  write.table(dataTransposed, file=filename, quote = FALSE, sep='\t', row.names = FALSE, col.names= FALSE)
+  write.table(paste0(outputDir,dataTransposed), file=filename, quote = FALSE, sep='\t', row.names = FALSE, col.names= FALSE)
   
   ### Return transposed data.matrix
 }
