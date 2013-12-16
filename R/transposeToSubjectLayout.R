@@ -49,7 +49,7 @@ transposeToSubjectLayout <- function
   dataTransposed = t(data) #transpose data
   
   #Save transposed tab delimited output
-  write.table(paste0(outputDir,dataTransposed), file=filename, quote = FALSE, sep='\t', row.names = FALSE, col.names= FALSE)
+  write.table(dataTransposed, file=paste0(outputDir,filename), quote = FALSE, sep='\t', row.names = FALSE, col.names= FALSE)
   
   ### Return transposed data.matrix
 }
